@@ -7,6 +7,10 @@ on the date, including average, maximum, minimum percentage, and the total numbe
 that passed the filter for each event. The filtered addresses are written to address.csv, and 
 event statistics are written to address_events.csv.
 
+In addition to filtering by percentage, the script preserves additional fields such as the 
+number of occurrences (`count`), BTC sent to and from addresses (`btc_in`, `btc_out`), which 
+can be useful for more detailed analysis.
+
 Usage:
     1. Adjust the MIN_PERCENTAGE and MAX_PERCENTAGE variables in the script to set the desired 
        percentage range.
@@ -24,11 +28,13 @@ Configuration:
     - EVENTS_FILE: The output CSV file to write event statistics to (default: 'address_events.csv').
 
 Notes:
-    - The input CSV file ('addresses.csv') must contain 'percentage_of_total' and 'event_time' fields.
+    - The input CSV file ('addresses.csv') must contain 'percentage_of_total', 'event_time', 
+      'count', 'btc_in', and 'btc_out' fields.
     - The script writes all filtered records to 'address.csv' and event statistics to 'address_events.csv'.
     - Make sure to run this script in a Python 3 environment.
 
 """
+
 
 import csv
 from collections import defaultdict
@@ -84,3 +90,4 @@ def filter_addresses_and_compile_stats(input_file, output_file, events_file, min
 if __name__ == "__main__":
     print(f"Running filter: MIN_PERCENTAGE={MIN_PERCENTAGE}%, MAX_PERCENTAGE={MAX_PERCENTAGE}%")
     filter_addresses_and_compile_stats(INPUT_FILE, OUTPUT_FILE, EVENTS_FILE, MIN_PERCENTAGE, MAX_PERCENTAGE)
+

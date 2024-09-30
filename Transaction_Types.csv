@@ -1,0 +1,8 @@
+type_name,description,requires_address,is_rejected,count_in_summary,report_filename,database_report,csv_report
+Taproot,Witness v1 Taproot transaction,True,True,Yes,taproot_addresses.db,False,False
+OP_RETURN,Null data transaction,False,True,No,,False,False
+Coinbase,Block reward transaction,True,True,Yes,coinbase_addresses.db,True,True
+P2PKH,Pay to Public Key Hash,True,False,Yes,P2PKH_addresses.db,False,False
+P2SH,Pay to Script Hash,True,False,Yes,P2SH_addresses.db,False,False
+P2WPKH,Pay to Witness Public Key Hash,True,False,Yes,P2WPKH_addresses.db,False,False
+Ordinals,Inscriptions or metadata transactions,True,False,Yes,Ordinals_addresses.db,False,False
