@@ -8,6 +8,12 @@ The Bitcoin Monitoring and Analysis Suite is a comprehensive system designed to 
 - **Purpose**: Extracts and records Bitcoin addresses involved in significant transactions around predefined market events.
 - **Functionality**: Processes blockchain data within specified time ranges, identifying transactions that exceed a given BTC threshold. Populates `addresses.csv` with relevant addresses and transaction details.
 
+BTC_monitor.py can be passed a "overnight_batch.csv" file, which contains a set of filters to analyse.
+
+$ python3 btc_monitor.py --batch overnight_batch.csv
+
+BTC_monitor creates a events.csv file which is analysis of transactions for the time period before each event in the changeevents.csv file, for each of the filters in "overnoght_batch.csv".
+
 ### Agent System (`agent.py`)
 - **Purpose**: Automates continuous monitoring of blockchain data, providing round-the-clock tracking of new blocks and transactions.
 - **Functionality**: Operates based on a flexible configuration system (`agent-XXX.conf`), executing tasks such as block monitoring and address tracking at regular intervals. Logs activities and can trigger alerts based on predefined conditions.
