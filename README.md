@@ -1,13 +1,4 @@
-<pre style="font-size:8px;">
-    ██████╗ ████████╗ ██████╗        ███╗   ███╗ ██████╗ ███╗   ██╗██╗████████╗ ██████╗ ██████╗   
-    ██╔══██╗╚══██╔══╝██╔═══██╗       ████╗ ████║██╔═══██╗████╗  ██║██║╚══██╔══╝██╔═══██╗██╔══██╗  
-    ██████╔╝   ██║   ██║             ██╔████╔██║██║   ██║██╔██╗ ██║██║   ██║   ██║   ██║██████╔╝  
-    ██╔══██╗   ██║   ██║   ██║       ██║╚██╔╝██║██║   ██║██║╚██╗██║██║   ██║   ██║   ██║██╔══██╗  
-    ██████╔╝   ██║   ╚██████╔╝       ██║ ╚═╝ ██║╚██████╔╝██║ ╚████║██║   ██║   ╚██████╔╝██║  ╚██╗
-    ╚═════╝    ╚═╝    ╚═════╝        ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝   ╚═╝    ╚═════╝ ╚═╝   ╚═╝ 
-</pre>
-
-# Bitcoin Monitoring and Analysis Suite
+# Bitcoin Monitoring and transaction Analysis Suite
 
 The Bitcoin Monitoring and Analysis Suite is a comprehensive system designed to automate the tracking, analysis, and reporting of significant Bitcoin blockchain activities. This suite enables users to monitor large transactions, analyze market events, and generate actionable insights, making it an essential tool for staying ahead of market dynamics.
 
