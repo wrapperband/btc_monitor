@@ -1,3 +1,12 @@
+"""
+    ██████╗ ████████╗ ██████╗        ███╗   ███╗ ██████╗ ███╗   ██╗██╗████████╗ ██████╗ ██████╗   
+    ██╔══██╗╚══██╔══╝██╔═══██╗       ████╗ ████║██╔═══██╗████╗  ██║██║╚══██╔══╝██╔═══██╗██╔══██╗  
+    ██████╔╝   ██║   ██║             ██╔████╔██║██║   ██║██╔██╗ ██║██║   ██║   ██║   ██║██████╔╝  
+    ██╔══██╗   ██║   ██║   ██║       ██║╚██╔╝██║██║   ██║██║╚██╗██║██║   ██║   ██║   ██║██╔══██╗  
+    ██████╔╝   ██║   ╚██████╔╝       ██║ ╚═╝ ██║╚██████╔╝██║ ╚████║██║   ██║   ╚██████╔╝██║  ╚██╗
+    ╚═════╝    ╚═╝    ╚═════╝        ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝   ╚═╝    ╚═════╝ ╚═╝   ╚═╝ 
+    """
+
 # Bitcoin Monitoring and Analysis Suite
 
 The Bitcoin Monitoring and Analysis Suite is a comprehensive system designed to automate the tracking, analysis, and reporting of significant Bitcoin blockchain activities. This suite enables users to monitor large transactions, analyze market events, and generate actionable insights, making it an essential tool for staying ahead of market dynamics.
@@ -6,13 +15,13 @@ The Bitcoin Monitoring and Analysis Suite is a comprehensive system designed to 
 
 ### `btc_monitor.py`
 - **Purpose**: Extracts and records Bitcoin addresses involved in significant transactions around predefined market events.
-- **Functionality**: Processes blockchain data within specified time ranges, identifying transactions that exceed a given BTC threshold. Populates `addresses.csv` with relevant addresses and transaction details.
+- **Functionality**: Processes blockchain data within specified time ranges, identifying transactions that exceed a given BTC threshold. Populates `addresses.csv` with relevant addresses and transaction details. BTC Monitor analyses the types and frequency of transactions within the filter periods, either set in the config or btc_monitor.conf, or using the "batch file" system.
 
 BTC_monitor.py can be passed a "overnight_batch.csv" file, which contains a set of filters to analyse.
 
 $ python3 btc_monitor.py --batch overnight_batch.csv
 
-BTC_monitor creates a events.csv file which is analysis of transactions for the time period before each event in the changeevents.csv file, for each of the filters in "overnoght_batch.csv".
+BTC_monitor creates a events.csv file which is analysis of transactions for the time period before each event in the changeevents.csv file, for each of the filter conditions such as transaction value range, in the customisable configuration file "overnight_batch.csv".
 
 ### Agent System (`agent.py`)
 - **Purpose**: Automates continuous monitoring of blockchain data, providing round-the-clock tracking of new blocks and transactions.
@@ -135,7 +144,7 @@ Ensure your project directory is set up as follows:
 Before running the monitoring scripts, ensure that your Bitcoin node is running and synchronized. The `bitcoind` daemon should be started with the appropriate configuration:
 
 ```bash
-/media/BigDisk2/programs/bitcoin-22.0/bin/bitcoind -conf=/home/tony/.config/Bitcoin/bitcoin.conf -printtoconsole -daemon
+/media/programs/bitcoin-22.0/bin/bitcoind -conf=/home/user/.config/Bitcoin/bitcoin.conf -printtoconsole -daemon
 ```
 
 ### Running the Suite
@@ -161,7 +170,7 @@ Before running the monitoring scripts, ensure that your Bitcoin node is running 
    - Extract and record Bitcoin addresses involved in transactions related to your events.
    - Example:
      ```bash
-     python btc_monitor.py
+     python btc_monitor.py  --batch overnight_batch.csv
      ```
 
 4. **Configure and Run the Agent**:
